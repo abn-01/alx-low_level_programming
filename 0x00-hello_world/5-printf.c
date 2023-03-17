@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Program that uses pritf 
+ * main - Begin point 
  *
  * Return: Always 0 (Success)
  */
