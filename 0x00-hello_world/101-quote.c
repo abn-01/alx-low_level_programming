@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - UNIX program
+ * main - Unix program
  * Return: Always 1 (Success)
  */
 int main(void)
