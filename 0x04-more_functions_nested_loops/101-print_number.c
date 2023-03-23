@@ -24,4 +24,4 @@ void print_number(int n)
 	}
 
 	r = 0;
-
+}
