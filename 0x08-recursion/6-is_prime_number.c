@@ -4,7 +4,7 @@
  * is_prime - 6-is_prime_number.c.
  * @n: input number.
  * @c: iterator.
- * Return: returns 1 if the input integer is a prime number, otherwise return 0.
+ * Return: 1 if the input integer is a prime number, otherwise return 0.
  */
 int is_prime(unsigned int n, unsigned int c)
 {
@@ -20,7 +20,7 @@ int is_prime(unsigned int n, unsigned int c)
 /**
  * is_prime_number - 6-is_prime_number.c.
  * @n: input number.
- * Return: returns 1 if the input integer is a prime number, otherwise return 0.
+ * Return: 1 if the input integer is a prime number, otherwise return 0.
  */
 int is_prime_number(int n)
 {
