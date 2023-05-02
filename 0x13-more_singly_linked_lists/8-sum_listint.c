@@ -4,18 +4,21 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - returns the nth node of a listint_t linked list
- * @head: pointer to the head node of the linked list
- * @index: index of the node to return, starting from 0
+ * sum_listint - Returns the sum of all the data (n) of a linked list.
+ * @head: A pointer to the first node of the list.
  *
- * Return: pointer to the nth node, or NULL if the node does not exist
+ * Return: If the list is empty - 0.
+ * Otherwise - sum of all the data (n) of a linked list.
  */
-listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+int sum_listint(listint_t *head)
 {
-	unsigned int i;
+	int sum = 0;
 
-	for (i = 0; head != NULL && i < index; i++)
+	while (head)
+	{
+		sum += head->n;
 		head = head->next;
+	}
 
-	return (i == index ? head : NULL);
+	return (sum);
 }
