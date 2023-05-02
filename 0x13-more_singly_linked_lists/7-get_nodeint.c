@@ -4,24 +4,18 @@
 #include "lists.h"
 
 /**
- * pop_listint - deletes the head node of a listint_t linked list,
- * and returns the head node's data (n)
- * @head: double pointer to the head of the linked list
+ * get_nodeint_at_index - returns the nth node of a listint_t linked list
+ * @head: pointer to the head node of the linked list
+ * @index: index of the node to return, starting from 0
  *
- * Return: the head node's data (n) or 0 if the list is empty
+ * Return: pointer to the nth node, or NULL if the node does not exist
  */
-int pop_listint(listint_t **head)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	int data = 0;
-	listint_t *temp;
+	unsigned int i;
 
-	if (head == NULL || *head == NULL)
-		return (data);
+	for (i = 0; head != NULL && i < index; i++)
+		head = head->next;
 
-	temp = *head;
-	data = temp->n;
-	*head = temp->next;
-	free(temp);
-
-	return (data);
+	return (i == index ? head : NULL);
 }
