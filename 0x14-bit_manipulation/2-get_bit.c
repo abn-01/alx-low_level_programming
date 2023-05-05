@@ -1,4 +1,4 @@
-#include "mainh"
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -10,19 +10,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int len = sizeof(unsigned long int) * 8;
-	char bits[len];
-	unsigned int i;
-
-	for (i = 0; i < len; i++)
-	{
-		bits[i] = (n & (1 << i)) ? '1' : '0';
-	}
-
-	if (index >= len)
-	{
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
-	}
 
-	return (bits[index] - '0');
+	return ((n >> index) & 1);
 }
