@@ -10,8 +10,19 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index >= sizeof(unsigned long int) * 8)
-		return (-1);
+	unsigned int len = sizeof(unsigned long int) * 8;
+	char bits[len];
+	unsigned int i;
 
-	return ((n >> index) & 1);
+	for (i = 0; i < len; i++)
+	{
+		bits[i] = (n & (1 << i)) ? '1' : '0';
+	}
+
+	if (index >= len)
+	{
+		return (-1);
+	}
+
+	return (bits[index] - '0');
 }
